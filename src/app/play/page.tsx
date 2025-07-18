@@ -5,7 +5,7 @@ import { GiWizardStaff } from "react-icons/gi";
 export default function Play() {
   return (
     <div className="min-h-screen bg-[linear-gradient(135deg,_#82e3fc,_#a0e66f)] flex justify-center">
-      <div className="min-h-[80vh] h-auto w-full max-w-7xl flex flex-col border-8 border-black rounded-2xl shadow-[8px_8px_16px_0_rgba(0,0,0,0.9)] relative bg-[url('/bgImg2.png')] bg-cover bg-center p-8">
+      <div className="w-full max-w-[95vw] sm:max-w-7xl mx-auto px-2 flex flex-col border-8 border-black rounded-2xl shadow-2xl bg-[url('/bgImg2.png')] bg-cover bg-center relative mt-4 mb-4 p-4 sm:p-8" style={{ backgroundColor: 'rgba(255,255,255,0.95)' }}>
         <div className="flex flex-col items-center gap-6">
           <h1 className="press-start text-lg sm:text-xl text-center flex items-center gap-2 text-black">
             <FaGamepad className="inline text-3xl text-yellow-500" /> Welcome to the Pixel Bonk Quiz Challenge! <GiWizardStaff className="inline text-3xl text-blue-700" /> <FaFrog className="inline text-3xl text-green-600" />

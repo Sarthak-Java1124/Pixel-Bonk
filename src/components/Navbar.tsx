@@ -1,6 +1,5 @@
 "use client";
 import { useMemo, useState } from "react";
-import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import {
   ConnectionProvider,
   WalletProvider,
@@ -15,6 +14,7 @@ import {
 } from "@solana/wallet-adapter-wallets";
 import "@solana/wallet-adapter-react-ui/styles.css";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -32,7 +32,6 @@ export default function Navbar() {
       <WalletProvider wallets={wallets} autoConnect>
         <WalletModalProvider>
           <div className="w-full flex flex-col sm:flex-row items-center sm:justify-between px-2 sm:px-8 rounded-t-2xl min-h-[80px] sm:min-h-[120px] gap-2 sm:gap-0 relative">
-            {/* Left extreme: Pixel Bonk */}
             <motion.span
               className="press-start text-2xl sm:text-4xl mb-2 sm:mb-0 whitespace-nowrap flex-shrink-0"
               animate={{
@@ -53,7 +52,6 @@ export default function Navbar() {
             >
               Pixel Bonk
             </motion.span>
-            {/* Hamburger menu for mobile only */}
             <button
               className="sm:hidden absolute right-4 top-4 z-30"
               onClick={() => setMenuOpen((v) => !v)}
@@ -63,26 +61,24 @@ export default function Navbar() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
-            {/* Center: Navlinks (desktop only) */}
             <nav className="hidden sm:flex flex-row gap-8 mb-2 sm:mb-0">
-              <a href="#" className="press-start text-black text-xs sm:text-sm hover:underline">HOME</a>
+              <Link href="/" className="press-start text-black text-xs sm:text-sm hover:underline">HOME</Link>
               <a href="#" className="press-start text-black text-xs sm:text-sm hover:underline">WHITEPAPER</a>
               <a href="#" className="press-start text-black text-xs sm:text-sm hover:underline">CONTACT</a>
-              <a href="#" className="press-start text-black text-xs sm:text-sm hover:underline">DEVTOOLS</a>
+              <Link href="/about" className="press-start text-black text-xs sm:text-sm hover:underline">ABOUT</Link>
+             
             </nav>
-            {/* Right extreme: Connect Wallet button */}
             <div className="w-full sm:w-auto flex justify-center sm:justify-end">
               <WalletMultiButton className="press-start w-full sm:w-auto bg-yellow-400 hover:bg-yellow-300 text-black text-xs sm:text-sm px-2 sm:px-4 py-2 rounded shadow border-2 border-black" />
             </div>
           </div>
-          {/* Mobile nav menu overlay (only on mobile) */}
           {menuOpen && (
             <div className="fixed inset-0 z-40 bg-black/40 flex flex-col">
               <div className="bg-white border-b-2 border-black p-6 flex flex-col gap-4">
-                <a href="#" className="press-start text-black text-xs hover:underline">HOME</a>
+                <Link href="/" className="press-start text-black text-xs hover:underline">HOME</Link>
                 <a href="#" className="press-start text-black text-xs hover:underline">WHITEPAPER</a>
                 <a href="#" className="press-start text-black text-xs hover:underline">CONTACT</a>
-                <a href="#" className="press-start text-black text-xs hover:underline">DEVTOOLS</a>
+                <Link href="/about" className="press-start text-black text-xs hover:underline">ABOUT</Link>
                 <button className="mt-4 text-black underline text-xs self-end" onClick={() => setMenuOpen(false)}>Close</button>
               </div>
             </div>

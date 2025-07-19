@@ -27,6 +27,35 @@ export default function Navbar() {
     []
   );
 
+  const scrollToAbout = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+      const targetPosition = aboutSection.offsetTop - 20;
+      const startPosition = window.pageYOffset;
+      const distance = targetPosition - startPosition;
+      const duration = 500;
+      let start: number | null = null;
+
+      const animation = (currentTime: number) => {
+        if (start === null) start = currentTime;
+        const timeElapsed = currentTime - start;
+        const run = ease(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+      };
+
+      const ease = (t: number, b: number, c: number, d: number) => {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+      };
+
+      requestAnimationFrame(animation);
+    }
+  };
+
   return (
     <ConnectionProvider endpoint={endpoint}>
       <WalletProvider wallets={wallets} autoConnect>
@@ -36,12 +65,12 @@ export default function Navbar() {
               className="press-start text-2xl sm:text-4xl mb-2 sm:mb-0 whitespace-nowrap flex-shrink-0"
               animate={{
                 color: [
-                  '#B8860B', // gold
-                  '#1e90ff', // blue
-                  '#e11d48', // pink/red
-                  '#22c55e', // green
-                  '#facc15', // yellow
-                  '#B8860B'  // back to gold
+                  '#B8860B',
+                  '#1e90ff',
+                  '#e11d48',
+                  '#22c55e',
+                  '#facc15',
+                  '#B8860B'
                 ]
               }}
               transition={{
@@ -62,10 +91,10 @@ export default function Navbar() {
               </svg>
             </button>
             <nav className="hidden sm:flex flex-row gap-8 mb-2 sm:mb-0">
-              <Link href="/" className="press-start text-black text-xs sm:text-sm hover:underline">HOME</Link>
-              <a href="#" className="press-start text-black text-xs sm:text-sm hover:underline">WHITEPAPER</a>
-              <a href="#" className="press-start text-black text-xs sm:text-sm hover:underline">CONTACT</a>
-              <Link href="/about" className="press-start text-black text-xs sm:text-sm hover:underline">ABOUT</Link>
+              <Link href="/" className="press-start text-black text-xs sm:text-sm hover:text-yellow-400 hover:underline transition-colors duration-200">HOME</Link>
+              <a href="#" className="press-start text-black text-xs sm:text-sm hover:text-yellow-400 hover:underline transition-colors duration-200">WHITEPAPER</a>
+              <a href="#" className="press-start text-black text-xs sm:text-sm hover:text-yellow-400 hover:underline transition-colors duration-200">CONTACT</a>
+              <a href="#about" onClick={scrollToAbout} className="press-start text-black text-xs sm:text-sm hover:text-yellow-400 hover:underline transition-colors duration-200">ABOUT</a>
              
             </nav>
             <div className="w-full sm:w-auto flex justify-center sm:justify-end">
@@ -75,10 +104,10 @@ export default function Navbar() {
           {menuOpen && (
             <div className="fixed inset-0 z-40 bg-black/40 flex flex-col">
               <div className="bg-white border-b-2 border-black p-6 flex flex-col gap-4">
-                <Link href="/" className="press-start text-black text-xs hover:underline">HOME</Link>
-                <a href="#" className="press-start text-black text-xs hover:underline">WHITEPAPER</a>
-                <a href="#" className="press-start text-black text-xs hover:underline">CONTACT</a>
-                <Link href="/about" className="press-start text-black text-xs hover:underline">ABOUT</Link>
+                <Link href="/" className="press-start text-black text-xs hover:text-yellow-400 hover:underline transition-colors duration-200">HOME</Link>
+                <a href="#" className="press-start text-black text-xs hover:text-yellow-400 hover:underline transition-colors duration-200">WHITEPAPER</a>
+                <a href="#" className="press-start text-black text-xs hover:text-yellow-400 hover:underline transition-colors duration-200">CONTACT</a>
+                <a href="#about" onClick={scrollToAbout} className="press-start text-black text-xs hover:text-yellow-400 hover:underline transition-colors duration-200">ABOUT</a>
                 <button className="mt-4 text-black underline text-xs self-end" onClick={() => setMenuOpen(false)}>Close</button>
               </div>
             </div>

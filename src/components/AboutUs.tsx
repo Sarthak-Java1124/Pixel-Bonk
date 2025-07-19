@@ -132,8 +132,8 @@ export default function AboutUs() {
   };
 
   return (
-    <div className="min-h-screen bg-[linear-gradient(135deg,_#82e3fc,_#a0e66f)] flex justify-center">
-      <div className="w-[90%] max-w-[400px] sm:w-full sm:max-w-[95vw] sm:max-w-7xl mx-auto px-2 flex flex-col border-8 border-black rounded-2xl shadow-2xl bg-[url('/bgImg2.png')] bg-cover bg-center relative mt-4 mb-4 p-4 sm:p-8 transform sm:transform-none scale-95 sm:scale-100 origin-center" style={{ backgroundColor: 'rgba(255,255,255,0.95)' }}>
+    <div className="min-h-screen flex justify-center">
+      <div className="w-full max-w-4xl mx-auto px-2 flex flex-col relative p-4 sm:p-8">
         <div className="flex flex-col items-center gap-6">
           <div className="w-full max-w-4xl sm:max-w-4xl max-w-[350px] relative">
             <div className="flex overflow-hidden">
@@ -145,7 +145,7 @@ export default function AboutUs() {
                   }`}
                   style={{ transform: `translateX(-${currentCard * 100}%)` }}
                 >
-                  <div className="bg-white border-4 border-black rounded-xl shadow-lg p-8 mx-4 min-h-[400px] sm:min-h-[400px] min-h-[300px] transform sm:transform-none scale-75 sm:scale-100 origin-center">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-xl p-8 mx-4 min-h-[400px] sm:min-h-[400px] min-h-[300px] transform sm:transform-none scale-75 sm:scale-100 origin-center">
                     {card.heading && (
                       <h2 className="press-start text-3xl font-bold text-black text-center mb-6">{card.heading}</h2>
                     )}

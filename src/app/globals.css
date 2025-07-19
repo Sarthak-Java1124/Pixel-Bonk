@@ -24,6 +24,16 @@ body {
   background: linear-gradient(135deg, #82e3fc, #a0e66f);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 20px;
+}
+
+* {
+  scroll-behavior: smooth;
 }
 
 .press-start {

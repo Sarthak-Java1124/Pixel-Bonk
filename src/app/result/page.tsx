@@ -34,13 +34,13 @@ export default function Result() {
             )}
           </div>
           <button
-            className="press-start bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-2 sm:py-3 px-4 sm:px-8 rounded shadow border-2 border-black text-xs sm:text-xl mt-4 sm:mt-8"
+            className="pixel-btn w-full max-w-xs text-center text-2xl mt-4 sm:mt-8"
             onClick={handleRestart}
           >
             Restart Quiz
           </button>
           <button
-            className="press-start bg-blue-400 hover:bg-blue-300 text-black font-bold py-2 sm:py-3 px-4 sm:px-8 rounded shadow border-2 border-black text-xs sm:text-xl mt-2"
+            className="pixel-btn w-full max-w-xs text-center text-2xl mt-2 bg-blue-400 hover:bg-blue-300"
             onClick={() => router.push("/")}
           >
             Go back to home

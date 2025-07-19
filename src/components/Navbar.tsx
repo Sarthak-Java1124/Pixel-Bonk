@@ -62,7 +62,7 @@ export default function Navbar() {
         <WalletModalProvider>
           <div className="w-full flex flex-col sm:flex-row items-center sm:justify-between px-2 sm:px-8 rounded-t-2xl min-h-[80px] sm:min-h-[120px] gap-2 sm:gap-0 relative">
             <motion.span
-              className="press-start text-2xl sm:text-4xl mb-2 sm:mb-0 whitespace-nowrap flex-shrink-0"
+              className="pixelcraft text-3xl sm:text-5xl mb-2 sm:mb-0 whitespace-nowrap flex-shrink-0"
               animate={{
                 color: [
                   '#B8860B',
@@ -91,7 +91,7 @@ export default function Navbar() {
               </svg>
             </button>
             <nav className="hidden sm:flex flex-row gap-8 mb-2 sm:mb-0">
-              <Link href="/" className="press-start text-black text-xs sm:text-sm hover:text-yellow-400 hover:underline transition-colors duration-200">HOME</Link>
+              <Link href="/" className="press-start text-black text-s sm:text-sm hover:text-yellow-400 hover:underline transition-colors duration-200">HOME</Link>
               <a href="#" className="press-start text-black text-xs sm:text-sm hover:text-yellow-400 hover:underline transition-colors duration-200">WHITEPAPER</a>
               <a href="#" className="press-start text-black text-xs sm:text-sm hover:text-yellow-400 hover:underline transition-colors duration-200">CONTACT</a>
               <a href="#about" onClick={scrollToAbout} className="press-start text-black text-xs sm:text-sm hover:text-yellow-400 hover:underline transition-colors duration-200">ABOUT</a>

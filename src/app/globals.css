@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;500;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/pixelcraft');
+@import url('https://fonts.cdnfonts.com/css/super-mario-256');
 @import "tailwindcss";
 
 :root {
@@ -38,4 +40,56 @@ html {
 
 .press-start {
   font-family: 'Press Start 2P', cursive;
+}
+
+.pixelcraft {
+  font-family: 'Pixelcraft', monospace;
+  font-weight: normal;
+  letter-spacing: -0.05em;
+}
+
+.pixel-border {
+  border: 2px solid #000;
+  border-radius: 0;
+  box-shadow:
+    4px 0 0 0 #000,
+    -4px 0 0 0 #000,
+    0 4px 0 0 #000,
+    0 -4px 0 0 #000,
+    4px 4px 0 0 #000,
+    -4px -4px 0 0 #000,
+    4px -4px 0 0 #000,
+    -4px 4px 0 0 #000;
+}
+
+.super-mario {
+  font-family: 'Super Mario 256', monospace;
+}
+
+.pixel-btn {
+  background-color: #FFD100;
+  color: #000;
+  font-family: 'Super Mario 256', monospace;
+  font-weight: bold;
+  padding: 0.5rem 2rem;
+  font-size: 1.25rem;
+  border: 2px solid #000;
+  border-radius: 0;
+  box-shadow:
+    4px 0 0 0 #000,
+    -4px 0 0 0 #000,
+    0 4px 0 0 #000,
+    0 -4px 0 0 #000,
+    4px 4px 0 0 #000,
+    -4px -4px 0 0 #000,
+    4px -4px 0 0 #000,
+    -4px 4px 0 0 #000;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+}
+.pixel-btn:hover {
+  background-color: #ffe066;
+  color: #222;
 }

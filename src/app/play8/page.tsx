@@ -68,7 +68,7 @@ export default function Play8() {
             )}
             <div className="flex justify-center mt-8">
               <Link href="/result" className={!answered ? 'pointer-events-none opacity-50' : ''} tabIndex={!answered ? -1 : 0} aria-disabled={!answered}>
-                <button className="press-start bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-3 px-8 rounded shadow border-2 border-black text-xs sm:text-xl">See Result</button>
+                <button className="pixel-btn w-full max-w-xs text-center text-2xl">See Result</button>
               </Link>
             </div>
           </div>

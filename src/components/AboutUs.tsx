@@ -188,7 +188,7 @@ export default function AboutUs() {
           </div>
 
           <div className="flex justify-center w-full mt-8">
-            <Link href="/" className="press-start bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-3 px-8 rounded shadow border-2 border-black text-base sm:text-xl cursor-pointer w-full max-w-xs text-center">
+            <Link href="/" className="pixel-btn w-full max-w-xs text-center">
               Back to Home
             </Link>
           </div>

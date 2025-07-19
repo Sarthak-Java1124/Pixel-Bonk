@@ -62,7 +62,7 @@ export default function Navbar() {
         <WalletModalProvider>
           <div className="w-full flex flex-col sm:flex-row items-center sm:justify-between px-2 sm:px-8 rounded-t-2xl min-h-[80px] sm:min-h-[120px] gap-2 sm:gap-0 relative">
             <motion.span
-              className="pixelcraft text-3xl sm:text-5xl mb-2 sm:mb-0 whitespace-nowrap flex-shrink-0"
+              className="hidden sm:block pixelcraft text-3xl sm:text-5xl mb-2 sm:mb-0 whitespace-nowrap flex-shrink-0"
               animate={{
                 color: [
                   '#B8860B',
@@ -97,7 +97,7 @@ export default function Navbar() {
               <a href="#about" onClick={scrollToAbout} className="press-start text-black text-xs sm:text-sm hover:text-yellow-400 hover:underline transition-colors duration-200">ABOUT</a>
              
             </nav>
-            <div className="w-full sm:w-auto flex justify-center sm:justify-end">
+            <div className="hidden sm:flex w-full sm:w-auto justify-center sm:justify-end">
               <WalletMultiButton className="press-start w-full sm:w-auto bg-yellow-400 hover:bg-yellow-300 text-black text-xs sm:text-sm px-2 sm:px-4 py-2 rounded shadow border-2 border-black" />
             </div>
           </div>
